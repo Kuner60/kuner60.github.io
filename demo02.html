@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品中心 - 智能多参数水质监测管理平台</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style_demo01.css">
+    <link rel="stylesheet" href="./css/style_demo02.css">
+</head>
+<body>
+    <!-- 导航栏 - 与主页面一致 -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="./images/logo_2.png" width="80" />
+                <a href="index.html" style="color: inherit; text-decoration: none;">
+                    福州市参带云监科技有限公司
+                </a>
+            </div>
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="./demo02.html" class="active">产品中心</a></li>
+                <li><a href="./index.html#solutions">解决方案</a></li>
+                <li><a href="./index.html#about">关于我们</a></li>
+                <li><a href="#news">新闻中心</a></li>
+                <li><a href="#partners">合作伙伴</a></li>
+                <li><a href="#support">服务与支持</a></li>
+                <li><a href="./index.html#home">返回首页</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 产品中心主标题区域 -->
+    <section class="hero product-hero">
+        <div class="container">
+            <h1>产品中心</h1>
+            <p>智能多参数水质监测系统的核心功能模块</p>
+        </div>
+    </section>
+
+    <!-- 主要功能模块区域 -->
+    <section class="product-modules" id="product-modules">
+        <div class="container">
+            <div class="section-title">
+                <h2>主要功能模块</h2>
+                <p>全面覆盖水质监测的各个关键参数，为智能化养殖提供精准数据支持</p>
+            </div>
+
+            <div class="modules-grid-special">
+                <!-- 左边2×2网格 -->
+                <div class="left-grid">
+                    <!-- 左上1 - 水温监测 -->
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <h3>水温监测</h3>
+                        <p>实时监测水体温度变化，精准控制养殖环境，确保水产生物处于最佳生长温度。</p>
+                        <div class="module-data">
+                            <span class="data-value">25.4</span>
+                            <span class="data-unit">°C</span>
+                        </div>
+                    </div>
+
+                    <!-- 左上2 - 光照监测 -->
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <h3>光照监测</h3>
+                        <p>监测光照强度与时长，分析光照对水质和水生生物的影响，优化养殖环境。</p>
+                        <div class="module-data">
+                            <span class="data-value">8888</span>
+                            <span class="data-unit">lux</span>
+                        </div>
+                    </div>
+
+                    <!-- 左下1 - pH值监测 -->
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>pH值监测</h3>
+                        <p>实时监测水体酸碱度，维持适宜pH范围，防止因pH异常导致的生物应激反应。</p>
+                        <div class="module-data">
+                            <span class="data-value">7.3</span>
+                            <span class="data-unit">pH</span>
+                        </div>
+                    </div>
+
+                    <!-- 左下2 - 二氧化碳含量监测 -->
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <h3>二氧化碳含量监测</h3>
+                        <p>监测水中溶解二氧化碳浓度，防止浓度过高对水生生物造成危害。</p>
+                        <div class="module-data">
+                            <span class="data-value">12.4</span>
+                            <span class="data-unit">mg/L</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 中间蓝牙模块 - 竖着占2行 -->
+                <div class="center-module">
+                    <div class="module-card-large">
+                        <div class="module-icon">
+                            <i class="fab fa-bluetooth"></i>
+                        </div>
+                        <h3>蓝牙模块</h3>
+                        <p>支持蓝牙无线连接，方便设备配置与数据读取，实现移动端实时监控。采用低功耗设计，确保长时间稳定运行。</p>
+                        <div class="module-tag">
+                            <div id="status">状态: 未连接</div>
+                            <div class="button-container">
+                                <button id="connectBtn" class="bluetooth-btn">连接设备</button>
+                                <button id="disconnectBtn" class="bluetooth-btn" disabled>断开连接</button>
+                            </div>
+                        </div>
+                        <div class="module-features">
+                            <div class="feature-item">
+                                <i class="fas fa-bluetooth-b"></i>
+                                <span>蓝牙5.0</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-battery-full"></i>
+                                <span>低功耗</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>移动端支持</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右边2×2网格 -->
+                <div class="right-grid">
+                    <!-- 右上1 - 含氧量监测 -->
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-lungs"></i>
+                        </div>
+                        <h3>含氧量监测</h3>
+                        <p>实时监测溶解氧浓度，确保水体含氧量充足，防止水生生物缺氧。</p>
+                        <div class="module-data">
+                            <span class="data-value">6.7</span>
+                            <span class="data-unit">mg/L</span>
+                        </div>
+                    </div>
+
+                    <!-- 右上2 - 浊度含量检测 -->
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h3>浊度含量检测</h3>
+                        <p>监测水体浑浊程度，判断水质清澈度，评估水体中悬浮颗粒物含量。</p>
+                        <div class="module-data">
+                            <span class="data-value">3.5</span>
+                            <span class="data-unit">NTU</span>
+                        </div>
+                    </div>
+
+                    <!-- 右下1 - 水位高度检测 -->
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-ruler-vertical"></i>
+                        </div>
+                        <h3>水位高度检测</h3>
+                        <p>实时监测水位变化，防止水位过高或过低影响养殖系统正常运行。</p>
+                        <div class="module-data">
+                            <span class="data-value">1.5</span>
+                            <span class="data-unit">m</span>
+                        </div>
+                    </div>
+
+                    <!-- 右下2 - AI赋能分析 -->
+                    <div class="module-card">
+                        <div class="module-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI赋能分析</h3>
+                        <p>基于人工智能算法，综合分析各项水质参数，提供智能养殖决策建议。</p>
+                        <div class="module-tag">
+                            <span>智能推荐</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技术参数表格 -->
+    <section class="tech-specs" id="tech-specs">
+        <div class="container">
+            <div class="section-title">
+                <h2>技术参数</h2>
+                <p>各监测模块的详细技术指标与性能参数</p>
+            </div>
+
+            <div class="specs-table-container">
+                <table class="specs-table">
+                    <thead>
+                        <tr>
+                            <th>监测参数</th>
+                            <th>测量范围</th>
+                            <th>精度</th>
+                            <th>分辨率</th>
+                            <th>响应时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>水温</td>
+                            <td>-10°C ~ 80°C</td>
+                            <td>±0.2°C</td>
+                            <td>0.1°C</td>
+                            <td>&lt;10秒</td>
+                        </tr>
+                        <tr>
+                            <td>pH值</td>
+                            <td>0 ~ 14 pH</td>
+                            <td>±0.1 pH</td>
+                            <td>0.01 pH</td>
+                            <td>&lt;30秒</td>
+                        </tr>
+                        <tr>
+                            <td>溶解氧</td>
+                            <td>0 ~ 20 mg/L</td>
+                            <td>±0.2 mg/L</td>
+                            <td>0.01 mg/L</td>
+                            <td>&lt;15秒</td>
+                        </tr>
+                        <tr>
+                            <td>浊度</td>
+                            <td>0 ~ 1000 NTU</td>
+                            <td>±2%</td>
+                            <td>0.1 NTU</td>
+                            <td>&lt;5秒</td>
+                        </tr>
+                        <tr>
+                            <td>水位</td>
+                            <td>0 ~ 5 m</td>
+                            <td>±0.5%</td>
+                            <td>0.01 m</td>
+                            <td>&lt;2秒</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 系统优势 -->
+    <section class="system-advantages" id="system-advantages">
+        <div class="container">
+            <div class="section-title">
+                <h2>系统优势</h2>
+                <p>智能水质监测系统的核心优势与特色功能</p>
+            </div>
+
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>24小时实时监测</h3>
+                    <p>系统全天候不间断监测各项水质参数，确保养殖环境始终处于最佳状态。</p>
+                </div>
+
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>智能数据分析</h3>
+                    <p>基于大数据分析和AI算法，提供精准的养殖建议和预警信息。</p>
+                </div>
+
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>移动端管理</h3>
+                    <p>通过手机APP随时查看监测数据，实现远程管理和控制。</p>
+                </div>
+
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>多重安全保障</h3>
+                    <p>数据加密传输，异常报警机制，确保养殖过程安全可靠。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>公司信息</h3>
+                    <p>福州市参带云监科技有限公司致力于智能化水质监测技术的研发与应用，为水产养殖行业提供高效、安全、可靠的监测解决方案。</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="product-center.html">产品中心</a></li>
+                        <li><a href="index.html#solutions">解决方案</a></li>
+                        <li><a href="index.html#about">关于我们</a></li>
+                        <li><a href="#news">新闻中心</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 福建省福州市科技园区创新大厦</li>
+                        <li><i class="fas fa-phone"></i> 1234567890</li>
+                        <li><i class="fas fa-envelope"></i> www.kuner.com</li>
+                        <li><i class="fas fa-clock"></i> 周一至周五 9:00-18:00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 福州市参带云监科技有限公司 版权所有</p>
+                <p>智能多参数水质监测管理平台 - 产品中心</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回首页悬浮按钮 -->
+    <div class="floating-home-btn">
+        <a href="index.html" title="返回首页">
+            <i class="fas fa-home"></i>
+        </a>
+    </div>
+
+    <!-- 悬浮导航窗 -->
+    <div class="floating-nav">
+        <div class="floating-nav-btn" data-target="product-modules">
+            <span>功能模块</span>
+        </div>
+        <div class="floating-nav-btn" data-target="tech-specs">
+            <span>技术参数</span>
+        </div>
+        <div class="floating-nav-btn" data-target="system-advantages">
+            <span>系统优势</span>
+        </div>
+    </div>
+
+    <script src="./js/demo02.js"></script>
+    <script src="./js/BluetoothModule.js"></script>
+</body>
+</html>

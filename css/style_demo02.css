@@ -1,0 +1,887 @@
+/* product-center.css - 完整产品中心页面样式 */
+
+/* 产品模块区域 */
+.product-modules {
+    padding: 80px 0;
+    background-color: #121212;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+    .section-title h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: #ffffff;
+    }
+
+    .section-title p {
+        color: #aaaaaa;
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+/* 特殊网格布局 - 左边2x2，中间竖条，右边2x2 */
+.modules-grid-special {
+    display: grid;
+    grid-template-columns: 1fr 280px 1fr; /* 调整中间列宽度为280px，不会太宽 */
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* 左侧2×2网格 */
+.left-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+
+/* 中间蓝牙模块 */
+.center-module {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 右侧2×2网格 */
+.right-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+
+/* 普通模块卡片样式 */
+.module-card {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+}
+
+    .module-card:hover {
+        border-color: #4fc3f7;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        transform: translateY(-5px);
+    }
+
+/* 中间蓝牙模块 - 大卡片 */
+.module-card-large {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 30px 25px;
+    text-align: center;
+    border: 1px solid #4fc3f7;
+    box-shadow: 0 0 20px rgba(79, 195, 247, 0.2);
+    position: relative;
+    width: 100%;
+    height: 100%; /* 占满父容器高度 */
+    min-height: 460px; /* 确保高度足够，大约是2个普通卡片的高度 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+    .module-card-large::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(79, 195, 247, 0.05), rgba(79, 195, 247, 0.02));
+        border-radius: 12px;
+        z-index: -1;
+    }
+
+    .module-card-large .module-icon {
+        font-size: 3.5rem;
+        color: #4fc3f7;
+        margin-bottom: 20px;
+    }
+
+    .module-card-large h3 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+        color: #ffffff;
+    }
+
+    .module-card-large p {
+        color: #cccccc;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .module-card-large .module-tag {
+        margin-top: 15px;
+    }
+
+        .module-card-large .module-tag span {
+            display: inline-block;
+            background-color: rgba(79, 195, 247, 0.1);
+            color: #4fc3f7;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            border: 1px solid rgba(79, 195, 247, 0.3);
+        }
+
+/* 大模块的特性列表 */
+.module-features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #4fc3f7;
+    font-size: 0.9rem;
+    background-color: rgba(79, 195, 247, 0.05);
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(79, 195, 247, 0.1);
+    width: 100%;
+    justify-content: center;
+}
+
+    .feature-item i {
+        font-size: 1.1rem;
+    }
+
+/* 卡片通用样式 */
+.module-icon {
+    font-size: 2.5rem;
+    color: #4fc3f7;
+    margin-bottom: 15px;
+}
+
+.module-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.module-card p {
+    color: #aaaaaa;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.module-data {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #333;
+}
+
+.data-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4fc3f7;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.data-unit {
+    font-size: 0.9rem;
+    color: #888;
+    margin-left: 5px;
+}
+
+.module-tag span {
+    display: inline-block;
+    background-color: rgba(79, 195, 247, 0.1);
+    color: #4fc3f7;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(79, 195, 247, 0.3);
+}
+
+/* 技术参数表格 */
+.tech-specs {
+    padding: 80px 0;
+    background-color: #1a1a1a;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.specs-table-container {
+    overflow-x: auto;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    min-width: 800px;
+}
+
+    .specs-table thead {
+        background-color: #2a2a2a;
+    }
+
+    .specs-table th {
+        padding: 18px 15px;
+        text-align: left;
+        color: #ffffff;
+        font-weight: 600;
+        border-bottom: 2px solid #4fc3f7;
+    }
+
+    .specs-table td {
+        padding: 16px 15px;
+        color: #cccccc;
+        border-bottom: 1px solid #333;
+    }
+
+    .specs-table tbody tr {
+        transition: background-color 0.3s;
+    }
+
+        .specs-table tbody tr:hover {
+            background-color: rgba(79, 195, 247, 0.05);
+        }
+
+        .specs-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+/* 系统优势区域 */
+.system-advantages {
+    padding: 80px 0;
+    background-color: #121212;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.advantage-item {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 30px 25px;
+    text-align: center;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+    .advantage-item:hover {
+        border-color: #4fc3f7;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+.advantage-icon {
+    font-size: 3rem;
+    color: #4fc3f7;
+    margin-bottom: 20px;
+}
+
+.advantage-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.advantage-item p {
+    color: #aaaaaa;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 返回首页悬浮按钮 */
+.floating-home-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #1e1e1e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 998;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+    .floating-home-btn:hover {
+        background-color: #4fc3f7;
+        transform: scale(1.1);
+    }
+
+    .floating-home-btn a {
+        color: #ffffff;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+    }
+
+    .floating-home-btn:hover a {
+        color: #121212;
+    }
+
+/* 产品中心页面特定的覆盖样式 */
+.hero.product-hero {
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.7) 0%, rgba(50, 50, 50, 0.65) 100%), url('https://images.unsplash.com/photo-1564419387641-9bc9c53a2c52?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #333;
+}
+
+    .hero.product-hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        color: #ffffff;
+    }
+
+    .hero.product-hero p {
+        font-size: 1.3rem;
+        max-width: 800px;
+        margin: 0 auto 30px;
+        opacity: 0.9;
+        color: #cccccc;
+    }
+
+/* 导航栏高亮当前页 */
+.nav-links a.active {
+    color: #4fc3f7;
+    position: relative;
+}
+
+    .nav-links a.active::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #4fc3f7;
+    }
+
+/* 悬浮导航窗样式 */
+.floating-nav {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+    background-color: rgba(30, 30, 30, 0.85);
+    border-radius: 12px;
+    padding: 20px 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(79, 195, 247, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.floating-nav-btn {
+    background: transparent;
+    border: none;
+    color: #e0e0e0;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .floating-nav-btn:hover {
+        color: #4fc3f7;
+        transform: translateX(-5px);
+    }
+
+/* 果冻动画效果 */
+@keyframes jelly {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(0.95);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    75% {
+        transform: scale(0.98);
+    }
+}
+
+.jelly-effect {
+    animation: jelly 0.5s ease;
+}
+
+/* 数据值动画效果 */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.data-value.updated {
+    animation: pulse 0.5s ease;
+}
+
+/* 模块卡片加载动画 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.module-card, .module-card-large, .advantage-item {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+/* 为不同模块设置不同的动画延迟 */
+.left-grid .module-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.left-grid .module-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.left-grid .module-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.left-grid .module-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.module-card-large {
+    animation-delay: 0.25s;
+}
+
+.right-grid .module-card:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.right-grid .module-card:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.right-grid .module-card:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.right-grid .module-card:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.advantage-item:nth-child(1) {
+    animation-delay: 0.9s;
+}
+
+.advantage-item:nth-child(2) {
+    animation-delay: 1.0s;
+}
+
+.advantage-item:nth-child(3) {
+    animation-delay: 1.1s;
+}
+
+.advantage-item:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+/* 响应式调整 */
+@media (max-width: 1200px) {
+    .modules-grid-special {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .center-module {
+        order: 2;
+    }
+
+    .left-grid,
+    .right-grid {
+        width: 100%;
+    }
+
+    .module-card-large {
+        min-height: 300px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .left-grid,
+    .right-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .hero.product-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero.product-hero p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .left-grid,
+    .right-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+    }
+
+    .floating-home-btn {
+        bottom: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .specs-table-container {
+        border-radius: 8px;
+    }
+
+    .specs-table th,
+    .specs-table td {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+
+    .hero.product-hero {
+        padding: 60px 0;
+    }
+
+        .hero.product-hero h1 {
+            font-size: 1.8rem;
+        }
+
+    .floating-nav {
+        bottom: 90px;
+        right: 20px;
+        padding: 15px 10px;
+        gap: 10px;
+    }
+
+    .floating-nav-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-modules,
+    .tech-specs,
+    .system-advantages {
+        padding: 50px 0;
+    }
+
+    .module-card {
+        padding: 25px 20px;
+    }
+
+    .module-icon {
+        font-size: 2.5rem;
+    }
+
+    .data-value {
+        font-size: 1.8rem;
+    }
+
+    .floating-home-btn {
+        bottom: 15px;
+        left: 15px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .hero.product-hero {
+        padding: 50px 0;
+    }
+
+        .hero.product-hero h1 {
+            font-size: 1.6rem;
+        }
+
+        .hero.product-hero p {
+            font-size: 1rem;
+        }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .floating-nav {
+        bottom: 80px;
+        right: 15px;
+        padding: 12px 8px;
+        gap: 8px;
+    }
+
+    .floating-nav-btn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+/* 高亮样式 */
+.highlight-section {
+    animation: highlight-pulse 2s ease;
+}
+
+@keyframes highlight-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(79, 195, 247, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(79, 195, 247, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(79, 195, 247, 0);
+    }
+}
+
+/* 蓝牙模块状态和按钮样式 开始！！！*/
+.module-card-large .module-tag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* 状态提示样式 */
+#status {
+    color: #4fc3f7;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    background-color: rgba(79, 195, 247, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(79, 195, 247, 0.3);
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* 按钮容器样式 */
+.module-card-large .button-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* 按钮通用样式 */
+.bluetooth-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    max-width: 120px;
+    text-align: center;
+    outline: none;
+}
+
+/* 连接按钮样式 */
+#connectBtn {
+    background-color: #4fc3f7;
+    color: #121212;
+    border: 2px solid #4fc3f7;
+}
+
+    #connectBtn:hover {
+        background-color: #2a9fd8;
+        border-color: #2a9fd8;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(42, 159, 216, 0.3);
+    }
+
+    #connectBtn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 5px rgba(42, 159, 216, 0.3);
+    }
+
+/* 断开连接按钮样式 */
+#disconnectBtn {
+    background-color: #6c757d;
+    color: #ffffff;
+    border: 2px solid #6c757d;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+    #disconnectBtn.enabled {
+        background-color: #ff6b6b;
+        color: #ffffff;
+        border: 2px solid #ff6b6b;
+        cursor: pointer;
+        opacity: 1;
+    }
+
+        #disconnectBtn.enabled:hover {
+            background-color: #ff4757;
+            border-color: #ff4757;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        #disconnectBtn.enabled:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(255, 107, 107, 0.3);
+        }
+
+/* 状态动画效果 */
+@keyframes statusPulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.status-connecting {
+    animation: statusPulse 1.5s infinite;
+    color: #ffc107 !important;
+    background-color: rgba(255, 193, 7, 0.1) !important;
+    border-color: rgba(255, 193, 7, 0.3) !important;
+}
+
+.status-connected {
+    color: #28a745 !important;
+    background-color: rgba(40, 167, 69, 0.1) !important;
+    border-color: rgba(40, 167, 69, 0.3) !important;
+}
+
+.status-disconnected {
+    color: #4fc3f7 !important;
+    background-color: rgba(79, 195, 247, 0.1) !important;
+    border-color: rgba(79, 195, 247, 0.3) !important;
+}
+
+.status-error {
+    color: #dc3545 !important;
+    background-color: rgba(220, 53, 69, 0.1) !important;
+    border-color: rgba(220, 53, 69, 0.3) !important;
+}
+
+/* 连接设备动画效果 */
+@keyframes connectingAnimation {
+    0% {
+        content: "连接设备.";
+    }
+
+    33% {
+        content: "连接设备..";
+    }
+
+    66% {
+        content: "连接设备...";
+    }
+
+    100% {
+        content: "连接设备.";
+    }
+}
+
+.connecting-text::after {
+    content: "";
+    animation: connectingAnimation 1.5s infinite;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .module-card-large .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bluetooth-btn {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    #status {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
+
+/* 蓝牙模块状态和按钮样式 结束！！！*/

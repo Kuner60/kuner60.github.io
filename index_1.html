@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>蓝牙模块示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #dataDisplay {
+            white-space: pre-line;
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 200px;
+            overflow-y: auto;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 8px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>蓝牙模块示例</h1>
+    <div id="status">状态: 未连接</div>
+    <button id="connectBtn">连接设备</button>
+    <button id="disconnectBtn" disabled>断开连接</button>
+
+    <h2>发送消息</h2>
+    <input type="text" id="messageInput" placeholder="输入要发送的消息">
+    <button id="sendBtn" disabled>发送</button>
+
+    <h2>接收到的数据</h2>
+    <div id="dataDisplay"></div>
+
+    <script src="./js/BluetoothModule.js"></script>
+</body>
+</html>
